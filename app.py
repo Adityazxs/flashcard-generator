@@ -20,7 +20,7 @@ text_input = st.text_area("Or paste your educational content here:", height=300)
 
 subject = st.selectbox("Select Subject (Optional)", ["General", "Biology", "History", "Computer Science", "Physics"])
 
-if st.button("Generate Flashcards"):
+if st.button("Generate Flashcards", key="generate_btn"):
     with st.spinner("Processing content and generating flashcards..."):
         content = extract_text(uploaded_file, text_input)
         flashcards = generate_flashcards(content, subject)
